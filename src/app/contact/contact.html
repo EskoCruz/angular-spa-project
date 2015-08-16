@@ -1,0 +1,71 @@
+
+<div class="container">
+
+	<h2>Contact</h2>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div ng-show="vm.submitted && vm.validated" class="animate-hide alert alert-success"><strong><span class="glyphicon glyphicon-send"></span> Success! Message sent.</strong></div>
+			<div ng-show="vm.submitted && !vm.validated" class="alert alert-danger"><span class="glyphicon glyphicon-alert"></span><strong> Error! Please check the inputs.</strong></div>
+		</div>
+
+		<div class="animate-hide" ng-hide="vm.submitted && vm.validated">
+			<form name="vm.contactForm" ng-submit="vm.submit()" novalidate>
+				<div class="col-lg-6">
+					<div class="well well-sm"><span class="glyphicon glyphicon-ok form-control-feedback"></span><strong>Required Field</strong></div>
+					<div class="form-group">
+						<label for="InputName">Your Name</label>
+						<div class="input-group">
+							<input name="name" ng-model="name" type="text" class="form-control" id="InputName" placeholder="Enter Name" required />
+							<span class="input-group-addon" ng-class="{ 'success': vm.submitted && vm.contactForm.name.$valid, 'danger': vm.submitted && vm.contactForm.name.$invalid }">
+								<i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.contactForm.name.$pristine || vm.contactForm.name.$dirty && !vm.submitted || vm.submitted && vm.contactForm.name.$valid, 'glyphicon-remove': vm.submitted && vm.contactForm.name.$invalid }"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputEmail">Your Email</label>
+						<div class="input-group">
+							<input name="email" ng-model="email" type="email" class="form-control" id="InputEmail" placeholder="Email" required />
+							<span class="input-group-addon" ng-class="{ 'success': vm.submitted && vm.contactForm.email.$valid, 'danger': vm.submitted && vm.contactForm.email.$invalid }">
+								<i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.contactForm.email.$pristine || vm.contactForm.email.$dirty && !vm.submitted || vm.submitted && vm.contactForm.email.$valid, 'glyphicon-remove': vm.submitted && vm.contactForm.email.$invalid }"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputMessage">Message</label>
+						<div class="input-group">
+							<textarea name="message" ng-model="message" id="InputMessage" class="form-control" rows="5" required></textarea>
+							<span class="input-group-addon" ng-class="{ 'success': vm.submitted && vm.contactForm.message.$valid, 'danger': vm.submitted && vm.contactForm.message.$invalid }">
+								<i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.contactForm.message.$pristine || vm.contactForm.message.$dirty && !vm.submitted || vm.submitted && vm.contactForm.message.$valid, 'glyphicon-remove': vm.submitted && vm.contactForm.message.$invalid }"></i>
+							</span>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="InputReal">What is {{ vm.ranNum1 }} + {{ vm.ranNum2 }}? (Simple Spam Checker)</label>
+						<div class="input-group">
+							<input name="mathCheck" ng-model="mathCheck" type="number" id="InputReal" class="form-control" required />
+							<span class="input-group-addon" ng-class="{ 'success': vm.submitted && vm.mathCheckMatch(), 'danger': vm.submitted && vm.contactForm.mathCheck.$invalid || vm.submitted && !vm.mathCheckMatch() }">
+								<i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.contactForm.mathCheck.$pristine || vm.contactForm.mathCheck.$dirty && !vm.submitted || vm.submitted && vm.mathCheckMatch(), 'glyphicon-remove': vm.submitted && !vm.mathCheckMatch() }"></i>
+							</span>
+						</div>
+					</div>
+					<div> contactForm is valid: {{ vm.contactForm.$valid }}.</div>
+					<div class="row-submit form-group">
+						<button name="submit" type="submit" class="btn btn-info pull-right">Submit</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<hr class="featurette-divider hidden-lg">
+
+		<div class="col-lg-5 col-lg-push-1">
+			<address>
+				<h3>Office Location</h3>
+				<p class="lead"><a href="https://www.google.com/maps/place/1466+Pearl+Pl,+Escondido,+CA+92027/@33.140407,-117.066327,17z" target="_blank">Esko Cruzeta<br>
+					Escondido, CA 92027</a><br>
+					Phone: <a href="tel:+18583527018">858-352-7018</a></p>
+			</address>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,46 @@
+.well {
+	&.well-sm {
+		position: relative;
+		overflow: auto;
+	}
+}
+.row-submit{
+	overflow: auto;
+}
+.input-group-addon {
+	//color: rgb(255, 255, 255);
+	&.primary {
+		background-color: rgb(50, 118, 177);
+		border-color: rgb(40, 94, 142);
+	}
+	&.success {
+		color: rgb(255, 255, 255);
+		background-color: rgb(92, 184, 92);
+		border-color: rgb(76, 174, 76);
+	}
+	&.info {
+		background-color: rgb(57, 179, 215);
+		border-color: rgb(38, 154, 188);
+	}
+	&.warning {
+		background-color: rgb(240, 173, 78);
+		border-color: rgb(238, 162, 54);
+	}
+	&.danger {
+		color: rgb(255, 255, 255);
+		background-color: rgb(217, 83, 79);
+		border-color: rgb(212, 63, 58);
+	}
+}
+
+
+.animate-hide {
+	-webkit-transition: all linear 0.5s;
+	transition: all linear 0.5s;
+	opacity: 1;
+}
+
+.animate-hide.ng-hide {
+	line-height: 0;
+	opacity: 0;
+}

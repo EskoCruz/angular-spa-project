@@ -1,0 +1,37 @@
+
+<div class="container">
+
+	<div class="text-center">
+		<h2>My Todo List</h2>
+		<div class="todos-input">
+			<form role="form" ng-submit="vm.addTodo()">
+				<div class="row">
+				<div class="input-group">
+					<input type='text' ng-model="vm.todoText" class="form-control" placeholder="What todo next?" />
+					<span class="input-group-btn">
+						<input type="submit" class="btn btn-primary" value="Add" />
+					</span>
+				</div>
+				</div>
+			</form>
+		</div>
+
+		<div class="todos-list">
+			<div ui-sortable ng-model="vm.todos">
+				<p class="input-group" ng-repeat="todo in vm.todos track by $index">
+					<span class="input-group-addon">
+						<span class="glyphicon glyphicon-resize-vertical"></span>
+					</span>
+					<span class="input-group-addon">
+						<input type="checkbox" name="done" ng-model="todo.done" />
+					</span>
+					<input type='text' ng-model="todo.text" ng-class="{'todo-done': todo.done }" class="form-control" />
+					<span class="input-group-btn">
+						<button class="btn btn-danger" ng-click="vm.removeTodo($index)">X</button>
+					</span>
+				</p>
+			</div>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,36 @@
+(function() {
+	'use strict';
+
+	describe('controllers', function(){
+
+		// load the controller's module
+		beforeEach(module('angularTodoApp'));
+
+		var MainCtrl, scope;
+
+		// Initialize the controller and a mock scope
+		beforeEach(inject(function ($controller, $rootScope) {
+			scope = $rootScope.$new();
+			MainCtrl = $controller('MainController', {
+				$scope: scope
+			});
+		}));
+
+		it('should have no items to start', function () {
+			expect(MainCtrl.todos.length).toBe(0);
+		});
+
+		it('should add items to the list', function () {
+			MainCtrl.todoText = 'Test 1';
+			MainCtrl.addTodo();
+			expect(MainCtrl.todos.length).toBe(1);
+		});
+
+		it('should add then remove an item from the list', function () {
+			MainCtrl.todoText = 'Test 1';
+			MainCtrl.addTodo();
+			MainCtrl.removeTodo(0);
+	   		expect(MainCtrl.todos.length).toBe(0);
+		});
+	});
+})();

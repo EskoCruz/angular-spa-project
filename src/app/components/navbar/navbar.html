@@ -1,0 +1,27 @@
+<nav class="navbar navbar-static-top navbar-inverse">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-6" ng-click="isCollapsed = !isCollapsed">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" ui-sref="home">
+        <span class="glyphicon glyphicon-home"></span> Todo List
+      </a>
+    </div>
+
+    <div collapse="isCollapsed" class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+        <li ng-class="{ active: isActive('/') }"><a ui-sref="home">Home</a></li>
+        <li ng-class="{ active: isActive('/about') }"><a ui-sref="about">About</a></li>
+        <li ng-class="{ active: isActive('/contact') }"><a ui-sref="contact">Contact</a></li>
+      </ul>
+
+       <ul class="nav navbar-nav navbar-right acme-navbar-text">
+        <li>Application was created {{ relativeDate }}.</li>
+      </ul>
+    </div>
+  </div>
+</nav>

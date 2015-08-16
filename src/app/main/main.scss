@@ -1,0 +1,22 @@
+//overwrite bootstrap
+.form-control {
+	height: 33px;
+}
+
+
+.todos-input {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.todos-list {
+	p {
+		cursor: move;
+		padding: 5px 10px;
+		.todo-done {
+			text-decoration: line-through;
+			color: #999;
+		}
+	}
+}
+
