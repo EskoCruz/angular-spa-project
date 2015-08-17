@@ -34,7 +34,7 @@
 					<div class="form-group">
 						<label for="InputMessage">Message</label>
 						<div class="input-group">
-							<textarea name="message" ng-model="message" id="InputMessage" class="form-control" rows="5" required></textarea>
+							<textarea name="message" data-ng-model="message" id="InputMessage" class="form-control" rows="5" required></textarea>
 							<span class="input-group-addon" ng-class="{ 'success': vm.submitted && vm.contactForm.message.$valid, 'danger': vm.submitted && vm.contactForm.message.$invalid }">
 								<i class="glyphicon" ng-class="{ 'glyphicon-ok': vm.contactForm.message.$pristine || vm.contactForm.message.$dirty && !vm.submitted || vm.submitted && vm.contactForm.message.$valid, 'glyphicon-remove': vm.submitted && vm.contactForm.message.$invalid }"></i>
 							</span>
@@ -49,7 +49,7 @@
 							</span>
 						</div>
 					</div>
-					<div> contactForm is valid: {{ vm.contactForm.$valid }}.</div>
+					<!--<div> contactForm is valid: {{ vm.contactForm.$valid }}.</div>-->
 					<div class="row-submit form-group">
 						<button name="submit" type="submit" class="btn btn-info pull-right">Submit</button>
 					</div>
