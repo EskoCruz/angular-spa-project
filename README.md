@@ -1,9 +1,5 @@
-track by angular
-
-ng-repeat=" track by $index">
-
-# angular-spa-project
-Single Page Application Projected developed using AngularJS. In this project, I created a Todo Application and a Contact Form.
+# AngularJS SPA Project
+Single Page Application Project developed using AngularJS. In this project, I created a Todo Application and a Contact Form.
 
 
 Here is a sample app written in AngularJS temporarily being hosted on AWS:  
