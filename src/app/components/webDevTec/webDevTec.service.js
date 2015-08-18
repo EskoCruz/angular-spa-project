@@ -61,7 +61,13 @@
         'url': 'https://github.com/sass/node-sass',
         'description': 'Node.js binding to libsass, the C version of the popular stylesheet preprocessor, Sass.',
         'logo': 'node-sass.png'
-      }
+      },
+		{
+			'title': 'Amazon S3',
+			'url': 'https://aws.amazon.com/s3/',
+			'description': 'Scalable Storage in the Cloud.',
+			'logo': 'aws-s3.png'
+		}
     ];
 
     this.getTec = getTec;
